@@ -1,2 +1,3 @@
----
-# defaults file for software_openjdk-8-jre-headless
+#Example on how to define software version. Dont fill this var if you want the latest version
+#version-openjdk-8-jre-headless:
+#byxussof this doesn't work yet
