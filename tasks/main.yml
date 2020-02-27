@@ -1,22 +1,28 @@
 ---
-- name: Installing openjdk-8-jre-headless packages using apt
-  become: true
-  apt:
-    pkg: "openjdk-8-jre-headless"
-    update_cache: yes
-    state: latest
-  when: ansible_distribution == 'Ubuntu'
+#- name: Installing openjdk-8-jre-headless packages using apt
+#  become: true
+#  apt:
+#    pkg: "openjdk-8-jre-headless"
+#    update_cache: yes
+#    state: latest
+#  when: ansible_distribution == 'Ubuntu'
 
-- name: Installing openjdk-8-jre-headless packages using yum
-  become: true
-  yum:
-    pkg: "openjdk-8-jre-headless"
-    update_cache: yes
-    state: latest
-  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
+#- name: Installing openjdk-8-jre-headless packages using yum
+#  become: true
+#  yum:
+#    pkg: "openjdk-8-jre-headless"
+#    update_cache: yes
+#    state: latest
+#  when: ansible_distribution == 'CentOS' or ansible_distribution == 'Red Hat Enterprise Linux'
 
-- name: Installing openjdk-8-jre-headless packages using pacman
-  pacman:
+#- name: Installing openjdk-8-jre-headless packages using pacman
+#  pacman:
+#    name: "openjdk-8-jre-headless"
+#    state: present
+#  when: ansible_distribution == 'MacOSX'
+
+- name: Installing openjdk-8-jre-headless packages
+  become: true
+  package:
     name: "openjdk-8-jre-headless"
     state: present
-  when: ansible_distribution == 'MacOSX'
